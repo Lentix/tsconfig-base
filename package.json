@@ -1,24 +1,9 @@
 {
-  "name": "@lentix/tsconfig",
+  "name": "@lentix/tsconfig-base",
   "version": "0.0.0",
   "description": "These are base shared `tsconfig.json`s from which all other `tsconfig.json`'s inherit from.",
   "main": "dist/index.js",
   "private": true,
-  "workspaces": [
-    "docs",
-    "tests",
-    "scripts",
-    "website",
-    "registry",
-    "workspaces/*"
-  ],
-  "man": [
-    "./man/foo.1",
-    "./man/bar.1"
-  ],
-  "bin": {
-    "my-program": "./path/to/program"
-  },
   "files": [
     "base.json",
     "nextjs.json",
@@ -26,11 +11,10 @@
   ],
   "scripts": {
     "prepare": "npx only-allow pnpm",
-    "build": "pnpm run build --filter=!@lentix/tsconfig",
-    "start": "tsc --watch",
-    "test": "jest ./index.ts --passWithNoTests",
-    "coverage": "jest --coverage",
-    "lint": "eslint *.ts*"
+
+    "test": "eslint *.js && node test.js",
+    "coverage": "jest --coverage"
+    
   },
   "homepage": "https://github.com/owner/project#readme",
   "repository": {
@@ -53,28 +37,5 @@
     "ts-jest": "29.0.3",
     "tsconfig-paths": "^4.1.1",
     "typescript": "^4.7.2"
-  },
-  "funding": {
-    "type" : "individual",
-    "url" : "http://example.com/donate"
-  },
-
-  "funding": {
-    "type" : "patreon",
-    "url" : "https://www.patreon.com/my-account"
-  },
-
-  "funding": "http://example.com/donate",
-
-  "funding": [
-    {
-      "type" : "individual",
-      "url" : "http://example.com/donate"
-    },
-    "http://example.com/donateAlso",
-    {
-      "type" : "patreon",
-      "url" : "https://www.patreon.com/my-account"
-    }
-  ]
+  }
 }  
